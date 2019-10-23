@@ -6,7 +6,7 @@
 #    By: chrhuang <chrhuang@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/07 14:51:18 by sregnard          #+#    #+#              #
-#    Updated: 2019/10/23 15:51:54 by sregnard         ###   ########.fr        #
+#    Updated: 2019/10/23 17:18:42 by chrhuang         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,8 @@ INCLUDES				:=	-I $(HEADDIR) \
 							-I $(SDL2)
 
 HEADERS					:=	mod1.h \
-							window.h	
+							window.h	\
+							point.h
 DEPENDENCIES			:=	$(addprefix $(HEADDIR), $(HEADERS))
 
 SRCDIR					:=	srcs/
@@ -28,6 +29,7 @@ SUBDIR					:=	mod1/
 SRCNAME					:=	mod1.cpp \
 							read_file.cpp \
 							window.cpp \
+							point.cpp \
 							SDL.cpp
 SRC						+=	$(addprefix $(SRCDIR)$(SUBDIR), $(SRCNAME))
 

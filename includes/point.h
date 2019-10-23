@@ -10,9 +10,9 @@ private:
 
 public:
     Point(int x = 0, int y = 0, int z = 0);
-    void getX(void);
-    void getY(void);
-    void getZ(void);
+    int getX(void);
+    int getY(void);
+    int getZ(void);
     void setX(int x);
     void setY(int y);
     void setZ(int z);

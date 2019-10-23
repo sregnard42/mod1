@@ -19,7 +19,7 @@ int Point::getY()
 
 int Point::getZ()
 {
-	return this->Z;
+	return this->z;
 }
 
 void Point::setX(int x)
@@ -36,9 +36,17 @@ void Point::setZ(int z)
 {
 	this->z = z;
 }
+
 void Point::setPoint(int x, int y, int z)
 {
 	this->x = x;
 	this->y = y;
 	this->z = z;
+}
+
+std::string Point::toString()
+{
+    return ("(" + std::to_string(this->x) + ", " +
+	std::to_string(this->y) + ", " +
+	std::to_string(this->z) + ")");
 }
