@@ -32,3 +32,4 @@
 *.app
 
 mod1
+.vscode*

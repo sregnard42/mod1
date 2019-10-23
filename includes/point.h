@@ -10,7 +10,6 @@ public:
     void getX(void);
     void getY(void);
     void getZ(void);
-    void getPoint(void);
     void setX(int x);
     void setY(int y);
     void setZ(int z);

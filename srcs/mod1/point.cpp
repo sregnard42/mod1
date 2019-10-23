@@ -1,32 +1,44 @@
 #include "mod1.h"
 
-Window::Window(int width, int height)
+Point::Point(int x, int y, int z)
 {
-    this->width = width;
-    this->height = height;
+	this->x = x;
+	this->y = y;
+	this->z = z;
 }
 
-int Window::getWidth()
+int Point::getX()
 {
-    return this->width;
+	return this->x;
 }
 
-void Window::setWidth(int width)
+int Point::getY()
 {
-    this->width = width;
+	return this->y;
 }
 
-int Window::getHeight()
+int Point::getZ()
 {
-    return this->height;
+	return this->Z;
 }
 
-void Window::setHeight(int height)
+void Point::setX(int x)
 {
-    this->height = height;
+	this->x = x;
 }
 
-std::string Window::toString()
+void Point::setY(int y)
 {
-    return ("Window size : " + std::to_string(this->width) + " x " + std::to_string(this->height));
+	this->y = y;
+}
+
+void Point::setZ(int z)
+{
+	this->z = z;
+}
+void Point::setPoint(int x, int y, int z)
+{
+	this->x = x;
+	this->y = y;
+	this->z = z;
 }
