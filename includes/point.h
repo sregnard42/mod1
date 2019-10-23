@@ -1,3 +1,6 @@
+#ifndef POINT_H
+# define POINT_H
+
 class Point
 {
 private:
@@ -16,3 +19,5 @@ public:
     void setPoint(int x, int y, int z);
     std::string toString(void);
 };
+
+#endif

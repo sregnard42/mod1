@@ -1,3 +1,6 @@
+#ifndef WINDOW_H
+# define WINDOW_H
+
 class Window
 {
 private:
@@ -12,3 +15,5 @@ public:
     void setHeight(int height);
     std::string toString(void);
 };
+
+#endif
