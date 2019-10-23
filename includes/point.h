@@ -17,7 +17,8 @@ public:
     void setY(int y);
     void setZ(int z);
     void setPoint(int x, int y, int z);
-    std::string toString(void);
+    string toString(void);
+    static Point parsePoint(string s);
 };
 
 #endif

@@ -1,31 +1,41 @@
 #include "mod1.h"
 
+vector<Point> process(string line)
+{
+    vector<Point> points;
+
+    points.push_back(Point::parsePoint(line));
+    return (points);
+}
+
+vector<vector<Point>> parsing(char *file)
+{
+    vector<vector<Point>> points;
+    ifstream input(file);
+    string line;
+
+    while (getline(input, line))
+        points.push_back(process(line));
+    return (points);
+}
+
 int main(int argc, char **argv)
 {
-    Window w;
-	Point p;
+	vector<vector<Point>> points;
 
     if (--argc)
-        std::cout << read_file(argv[1]);
-    w = Window(1280, 720);
-    std::cout << w.toString() << "\n";
-	display_window(SCREEN_WIDTH, SCREEN_HEIGHT);
-	p = Point(400, 400);
-	Point p1 = Point(100, 100);
-	Point p2 = Point(200, 200);
+        points = parsing(argv[1]);
+    else
+        cout << "usage:\t./mod1 file.mod1" << endl;
 
-	// Liste de points
-	std::vector<Point> points;
-    points.push_back(p);
-    points.push_back(p);
-    points.push_back(p);
-    points.push_back(p);
-    points.push_back(p);
-    points.push_back(p);
-    points.push_back(Point(21, 42));
-    points.insert(points.begin(), p1);
-    points.insert(points.begin(), p2);
-    for (Point pl : points)
-        std::cout << pl.toString() << std::endl;
+    int i = 0;
+    for (vector<Point> current : points)
+    {
+        cout << "Row no. " << ++i << '\t';
+        for (Point point : current)
+            cout << point.toString() << '\t';
+        cout << endl;
+    }
+    
     return 0;
 }

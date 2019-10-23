@@ -8,13 +8,15 @@
 # include <SDL.h>
 # include <vector>
 
+using namespace std;
+
 # include "window.h"
 # include "point.h"
 
 const int SCREEN_WIDTH = 1280;
 const int SCREEN_HEIGHT = 720;
 
-std::string read_file(char * file);
+string      read_file(char * file);
 void		display_window(int width, int heigh);
 
 #endif

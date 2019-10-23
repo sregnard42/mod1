@@ -44,9 +44,19 @@ void Point::setPoint(int x, int y, int z)
 	this->z = z;
 }
 
-std::string Point::toString()
+string Point::toString()
 {
-    return ("(" + std::to_string(this->x) + ", " +
-	std::to_string(this->y) + ", " +
+    return ("(" +
+	std::to_string(this->x) + "," +
+	std::to_string(this->y) + "," +
 	std::to_string(this->z) + ")");
+}
+
+Point Point::parsePoint(string s)
+{
+	Point p;
+
+	p = Point();
+	cout << s << endl;
+	return (p);
 }
