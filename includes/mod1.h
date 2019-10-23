@@ -1,9 +1,18 @@
-#include <iostream>
-#include <fstream>
-#include <string>
-#include <stdlib.h>
-#include <SDL.h>
+#ifndef
+# define MOD1_H
 
-#include "window.h"
+# include <iostream>
+# include <fstream>
+# include <string>
+# include <stdlib.h>
+# include <SDL.h>
+
+# include "window.h"
+
+const int SCREEN_WIDTH = 1280;
+const int SCREEN_HEIGHT = 720;
 
 std::string read_file(char * file);
+void		display_window(int width, int heigh);
+
+#endif

@@ -6,7 +6,7 @@
 #    By: chrhuang <chrhuang@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/07 14:51:18 by sregnard          #+#    #+#              #
-#    Updated: 2019/10/16 14:32:31 by sregnard         ###   ########.fr        #
+#    Updated: 2019/10/23 15:51:54 by sregnard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,8 @@ SRC						:=	$(SRC)
 SUBDIR					:=	mod1/
 SRCNAME					:=	mod1.cpp \
 							read_file.cpp \
-							window.cpp
+							window.cpp \
+							SDL.cpp
 SRC						+=	$(addprefix $(SRCDIR)$(SUBDIR), $(SRCNAME))
 
 OBJDIR					:=	objs/
