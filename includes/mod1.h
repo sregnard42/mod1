@@ -6,10 +6,10 @@
 # include <string>
 # include <stdlib.h>
 # include <SDL.h>
+# include <vector>
 
 # include "window.h"
 # include "point.h"
-#include <vector>
 
 const int SCREEN_WIDTH = 1280;
 const int SCREEN_HEIGHT = 720;
