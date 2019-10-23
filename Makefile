@@ -37,7 +37,7 @@ OBJDIR					:=	objs/
 OBJ						:=	$(SRC:$(SRCDIR)%.cpp=$(OBJDIR)%.o)
 
 CC						:=	g++
-CFLAGS					:=	-Wall -Wextra -Werror
+CFLAGS					:=	-Wall -Wextra -Werror -std=c++11
 LFLAGS					:= `sdl2-config --libs`
 
 _RED					:=	\033[1;31m

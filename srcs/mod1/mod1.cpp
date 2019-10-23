@@ -11,6 +11,21 @@ int main(int argc, char **argv)
     std::cout << w.toString() << "\n";
 	display_window(SCREEN_WIDTH, SCREEN_HEIGHT);
 	p = Point(400, 400);
-	std::cout << p.toString();
+	Point p1 = Point(100, 100);
+	Point p2 = Point(200, 200);
+
+	// Liste de points
+	std::vector<Point> points;
+    points.push_back(p);
+    points.push_back(p);
+    points.push_back(p);
+    points.push_back(p);
+    points.push_back(p);
+    points.push_back(p);
+    points.push_back(Point(21, 42));
+    points.insert(points.begin(), p1);
+    points.insert(points.begin(), p2);
+    for (Point pl : points)
+        std::cout << pl.toString() << std::endl;
     return 0;
 }
