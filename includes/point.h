@@ -9,16 +9,39 @@ private:
     int z;
 
 public:
+    /* Constructor */
     Point(int x = 0, int y = 0, int z = 0);
+
+    /* Getters */
     int getX(void);
     int getY(void);
     int getZ(void);
+
+    /* Setters */
     void setX(int x);
     void setY(int y);
     void setZ(int z);
     void setPoint(int x, int y, int z);
+
+    /* Operations */
+    void addX(int x);
+    void addY(int y);
+    void addZ(int z);
+
+    /* Overloading */
+    void operator+=(Point p);
+    void operator-=(Point p);
+    void operator*=(Point p);
+    void operator/=(Point p);
+    void operator%=(Point p);
+
+    /* String output */
     string toString(void);
-    static Point parsePoint(string s);
+    static string toString(vector<Point> points);
+    static string toString(vector<vector<Point>> points);
+
+    /* Projection - 3D to 2D */
+    void isometric(void);
 };
 
 #endif

@@ -25,12 +25,15 @@ DEPENDENCIES			:=	$(addprefix $(HEADDIR), $(HEADERS))
 SRCDIR					:=	srcs/
 SRC						:=	$(SRC)
 
-SUBDIR					:=	mod1/
+SUBDIR					:=	
 SRCNAME					:=	mod1.cpp \
-							read_file.cpp \
-							window.cpp \
-							point.cpp \
+							parsing.cpp \
 							SDL.cpp
+SRC						+=	$(addprefix $(SRCDIR)$(SUBDIR), $(SRCNAME))
+
+SUBDIR					:=	classes/
+SRCNAME					:=	window.cpp \
+							point.cpp
 SRC						+=	$(addprefix $(SRCDIR)$(SUBDIR), $(SRCNAME))
 
 OBJDIR					:=	objs/
