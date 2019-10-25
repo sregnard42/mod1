@@ -1,34 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   window.h                                           :+:      :+:    :+:   */
+/*   controller.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sregnard <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/25 12:03:09 by sregnard          #+#    #+#             */
-/*   Updated: 2019/10/25 12:03:10 by sregnard         ###   ########.fr       */
+/*   Created: 2019/10/25 12:04:19 by sregnard          #+#    #+#             */
+/*   Updated: 2019/10/25 12:04:20 by sregnard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WINDOW_H
-#define WINDOW_H
+#include "mod1.h"
 
-const int SCREEN_WIDTH = 1280;
-const int SCREEN_HEIGHT = 720;
-
-class Window
+Controller::Controller(Model *model)
 {
-private:
-    int height;
-    int width;
+    cout << "Controller::Controller()" << endl;
+    this->model = model;
+    this->model->addObs(this);
+}
 
-public:
-    Window(int width = SCREEN_WIDTH, int height = SCREEN_HEIGHT);
-    int getWidth(void);
-    int getHeight(void);
-    void setWidth(int width);
-    void setHeight(int height);
-    string toString(void);
-};
+string Controller::getClassName(void)
+{
+    return ("Controller");
+}
 
-#endif
+void Controller::update(void)
+{
+    this->updateAll();
+}

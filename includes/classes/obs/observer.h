@@ -1,34 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   window.h                                           :+:      :+:    :+:   */
+/*   observer.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sregnard <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/25 12:03:09 by sregnard          #+#    #+#             */
-/*   Updated: 2019/10/25 12:03:10 by sregnard         ###   ########.fr       */
+/*   Created: 2019/10/25 12:03:25 by sregnard          #+#    #+#             */
+/*   Updated: 2019/10/25 12:03:26 by sregnard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WINDOW_H
-#define WINDOW_H
+#ifndef OBSERVER_H
+#define OBSERVER_H
 
-const int SCREEN_WIDTH = 1280;
-const int SCREEN_HEIGHT = 720;
+#include "mod1.h"
 
-class Window
+class Observer
 {
-private:
-    int height;
-    int width;
-
 public:
-    Window(int width = SCREEN_WIDTH, int height = SCREEN_HEIGHT);
-    int getWidth(void);
-    int getHeight(void);
-    void setWidth(int width);
-    void setHeight(int height);
-    string toString(void);
+    virtual ~Observer(){};
+    virtual void update(void) = 0;
+    virtual string getClassName(void) = 0;
 };
 
 #endif

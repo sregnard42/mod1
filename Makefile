@@ -16,18 +16,18 @@ HEADDIR					:=	includes/
 SDL2					:=	libs/SDL2.framework/Headers
 INCLUDES				:=	-I $(HEADDIR) \
 							-I $(HEADDIR)classes/ \
-							-I $(HEADDIR)mvc/ \
-							-I $(HEADDIR)obs/ \
+							-I $(HEADDIR)classes/mvc \
+							-I $(HEADDIR)classes/obs \
 							-I $(SDL2)
 
 HEADERS					:=	mod1.h \
 							classes/point.h \
 							classes/window.h \
-							mvc/controller.h \
-							mvc/model.h \
-							mvc/view.h \
-							obs/observable.h \
-							obs/observer.h
+							classes/mvc/controller.h \
+							classes/mvc/model.h \
+							classes/mvc/view.h \
+							classes/obs/observable.h \
+							classes/obs/observer.h
 
 DEPENDENCIES			:=	$(addprefix $(HEADDIR), $(HEADERS))
 
@@ -45,11 +45,15 @@ SRCNAME					:=	window.cpp \
 							point.cpp
 SRC						+=	$(addprefix $(SRCDIR)$(SUBDIR), $(SRCNAME))
 
-#SUBDIR					:=	mvc/
-#SRCNAME					:=	controller.cpp \
+SUBDIR					:=	classes/mvc/
+SRCNAME					:=	controller.cpp \
 							model.cpp \
 							view.cpp
-#SRC						+=	$(addprefix $(SRCDIR)$(SUBDIR), $(SRCNAME))
+SRC						+=	$(addprefix $(SRCDIR)$(SUBDIR), $(SRCNAME))
+
+SUBDIR					:=	classes/obs/
+SRCNAME					:=	observable.cpp
+SRC						+=	$(addprefix $(SRCDIR)$(SUBDIR), $(SRCNAME))
 
 OBJDIR					:=	objs/
 OBJ						:=	$(SRC:$(SRCDIR)%.cpp=$(OBJDIR)%.o)

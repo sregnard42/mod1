@@ -1,34 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   window.h                                           :+:      :+:    :+:   */
+/*   model.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sregnard <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/25 12:03:09 by sregnard          #+#    #+#             */
-/*   Updated: 2019/10/25 12:03:10 by sregnard         ###   ########.fr       */
+/*   Created: 2019/10/25 12:03:17 by sregnard          #+#    #+#             */
+/*   Updated: 2019/10/25 12:03:19 by sregnard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WINDOW_H
-#define WINDOW_H
+#ifndef MODEL_H
+#define MODEL_H
 
-const int SCREEN_WIDTH = 1280;
-const int SCREEN_HEIGHT = 720;
+#include "mod1.h"
 
-class Window
+class Model : public Observable
 {
-private:
-    int height;
-    int width;
-
 public:
-    Window(int width = SCREEN_WIDTH, int height = SCREEN_HEIGHT);
-    int getWidth(void);
-    int getHeight(void);
-    void setWidth(int width);
-    void setHeight(int height);
-    string toString(void);
+    /* Constructor */
+    Model(void);
+
+    /* Class Name */
+    string getClassName(void);
 };
 
 #endif

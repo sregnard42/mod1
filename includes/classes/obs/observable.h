@@ -1,34 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   window.h                                           :+:      :+:    :+:   */
+/*   observable.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sregnard <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/25 12:03:09 by sregnard          #+#    #+#             */
-/*   Updated: 2019/10/25 12:03:10 by sregnard         ###   ########.fr       */
+/*   Created: 2019/10/25 12:03:23 by sregnard          #+#    #+#             */
+/*   Updated: 2019/10/25 12:03:24 by sregnard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WINDOW_H
-#define WINDOW_H
+#ifndef OBSERVABLE_H
+#define OBSERVABLE_H
 
-const int SCREEN_WIDTH = 1280;
-const int SCREEN_HEIGHT = 720;
+#include "mod1.h"
 
-class Window
+class Observable
 {
 private:
-    int height;
-    int width;
+    vector<Observer *> obs;
+protected:
+    bool needUpdate;
 
 public:
-    Window(int width = SCREEN_WIDTH, int height = SCREEN_HEIGHT);
-    int getWidth(void);
-    int getHeight(void);
-    void setWidth(int width);
-    void setHeight(int height);
-    string toString(void);
+    void addObs(Observer *obs);
+    void updateAll(void);
+    bool updateNeeded(void);
+    void updateFinished(void);
+    virtual string getClassName(void) = 0;
 };
 
 #endif

@@ -1,34 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   window.h                                           :+:      :+:    :+:   */
+/*   view.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sregnard <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/25 12:03:09 by sregnard          #+#    #+#             */
-/*   Updated: 2019/10/25 12:03:10 by sregnard         ###   ########.fr       */
+/*   Created: 2019/10/25 12:03:20 by sregnard          #+#    #+#             */
+/*   Updated: 2019/10/25 12:03:22 by sregnard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WINDOW_H
-#define WINDOW_H
+#ifndef VIEW_H
+#define VIEW_H
 
-const int SCREEN_WIDTH = 1280;
-const int SCREEN_HEIGHT = 720;
+#include "mod1.h"
 
-class Window
+class View : public Observer
 {
 private:
-    int height;
-    int width;
+    Model *model;
+    Controller *controller;
 
 public:
-    Window(int width = SCREEN_WIDTH, int height = SCREEN_HEIGHT);
-    int getWidth(void);
-    int getHeight(void);
-    void setWidth(int width);
-    void setHeight(int height);
-    string toString(void);
+    /* Constructor */
+    View(Model *model, Controller *controller);
+
+    /* Class Name */
+    string getClassName(void);
+
+    /* Observer */
+    void update(void);
+    
+    /* View */
+    void updateFromModel(void);
+    void updateFromController(void);
 };
 
 #endif
