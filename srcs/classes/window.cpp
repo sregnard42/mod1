@@ -6,27 +6,14 @@ Window::Window(int width, int height)
     this->height = height;
 }
 
-int Window::getWidth()
-{
-    return this->width;
-}
-
-void Window::setWidth(int width)
-{
-    this->width = width;
-}
-
-int Window::getHeight()
-{
-    return this->height;
-}
-
-void Window::setHeight(int height)
-{
-    this->height = height;
-}
+int Window::getWidth(void) { return this->width; }
+int Window::getHeight(void) { return this->height; }
+void Window::setWidth(int width) { this->width = width; }
+void Window::setHeight(int height) { this->height = height; }
 
 std::string Window::toString()
 {
-    return ("Window size : " + std::to_string(this->width) + " x " + std::to_string(this->height));
+    return ("Window size : "
+    + std::to_string(this->width) + "x"
+    + std::to_string(this->height));
 }

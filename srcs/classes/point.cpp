@@ -25,16 +25,11 @@ void Point::addX(int x) { this->x += x; }
 void Point::addY(int y) { this->y += y; }
 void Point::addZ(int z) { this->z += z; }
 
-void Point::operator+=(Point p)
-{ this->setPoint(this->x + p.x, this->y + p.y, this->z + p.y); }
-void Point::operator-=(Point p)
-{ this->setPoint(this->x - p.x, this->y - p.y, this->z - p.y); }
-void Point::operator*=(Point p)
-{ this->setPoint(this->x * p.x, this->y * p.y, this->z * p.y); }
-void Point::operator/=(Point p)
-{ this->setPoint(this->x / p.x, this->y / p.y, this->z / p.y); }
-void Point::operator%=(Point p)
-{ this->setPoint(this->x % p.x, this->y % p.y, this->z % p.y); }
+void Point::operator+=(Point p) { this->setPoint(this->x + p.x, this->y + p.y, this->z + p.y); }
+void Point::operator-=(Point p) { this->setPoint(this->x - p.x, this->y - p.y, this->z - p.y); }
+void Point::operator*=(Point p) { this->setPoint(this->x * p.x, this->y * p.y, this->z * p.y); }
+void Point::operator/=(Point p) { this->setPoint(this->x / p.x, this->y / p.y, this->z / p.y); }
+void Point::operator%=(Point p) { this->setPoint(this->x % p.x, this->y % p.y, this->z % p.y); }
 
 string Point::toString(void)
 {
@@ -62,7 +57,7 @@ string Point::toString(vector<vector<Point>> points)
 	return (s);
 }
 
-void  Point::isometric(void)
+void Point::isometric(void)
 {
 	this->x = (this->x - this->y) * 2;
 	this->y = (this->x + this->y) - this->z * 2;

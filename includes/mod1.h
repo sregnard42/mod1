@@ -8,15 +8,23 @@
 # include <string>
 # include <vector>
 
-# include <SDL.h>
-
 using namespace std;
 
+/* SDL */
+# include <SDL.h>
+
+/* Classes */
 # include "window.h"
 # include "point.h"
 
-const int SCREEN_WIDTH = 1280;
-const int SCREEN_HEIGHT = 720;
+/* Observable / Observer */
+# include "observer.h"
+# include "observable.h"
+
+/* MVC */
+# include "model.h"
+# include "controller.h"
+# include "view.h"
 
 string                  read_file(char * file);
 void		            display_window(int width, int heigh);
