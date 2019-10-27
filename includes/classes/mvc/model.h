@@ -17,12 +17,20 @@
 
 class Model : public Observable
 {
+private:
+    vector<vector<Point>> points;
+    Point max;
+    Map *map;
 public:
     /* Constructor */
     Model(void);
 
     /* Class Name */
     string getClassName(void);
+
+    /* Model */
+    void init(char *file);
+    void compareMax(Point p);
 };
 
 #endif

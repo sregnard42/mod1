@@ -21,3 +21,19 @@ string Model::getClassName(void)
 {
     return ("Model");
 }
+
+void Model::init(char *file)
+{
+    this->points = parseFile(*this, file);
+    *(this->map) = Map(this->max);
+}
+
+void Model::compareMax(Point p)
+{
+    if (this->max.getX() < p.getX())
+        this->max.setX(p.getX());
+    if (this->max.getY() < p.getY())
+        this->max.setY(p.getY());
+    if (this->max.getZ() < p.getZ())
+        this->max.setZ(p.getZ());
+}

@@ -6,7 +6,7 @@
 #    By: chrhuang <chrhuang@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/07 14:51:18 by sregnard          #+#    #+#              #
-#    Updated: 2019/10/23 17:18:42 by chrhuang         ###   ########.fr        #
+#    Updated: 2019/10/27 14:50:10 by sregnard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,6 +23,8 @@ INCLUDES				:=	-I $(HEADDIR) \
 HEADERS					:=	mod1.h \
 							classes/point.h \
 							classes/window.h \
+							classes/map.h \
+							classes/cell.h \
 							classes/mvc/controller.h \
 							classes/mvc/model.h \
 							classes/mvc/view.h \
@@ -42,7 +44,9 @@ SRC						+=	$(addprefix $(SRCDIR)$(SUBDIR), $(SRCNAME))
 
 SUBDIR					:=	classes/
 SRCNAME					:=	window.cpp \
-							point.cpp
+							point.cpp \
+							map.cpp \
+							cell.cpp
 SRC						+=	$(addprefix $(SRCDIR)$(SUBDIR), $(SRCNAME))
 
 SUBDIR					:=	classes/mvc/

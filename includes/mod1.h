@@ -28,6 +28,8 @@ using namespace std;
 /* Classes */
 # include "window.h"
 # include "point.h"
+# include "cell.h"
+# include "map.h"
 
 /* Observable / Observer */
 # include "observer.h"
@@ -42,8 +44,8 @@ string                  read_file(char * file);
 void		            display_window(int width, int heigh);
 
 /* Parsing */
-Point                   parsePoint(string s);
-vector<Point>           parseLine(string line);
-vector<vector<Point>>   parseFile(char *file);
+Point                   parsePoint(Model model, string s);
+vector<Point>           parseLine(Model model, string line);
+vector<vector<Point>>   parseFile(Model model, char *file);
 
 #endif

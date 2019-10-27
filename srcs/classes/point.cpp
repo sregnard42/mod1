@@ -37,11 +37,11 @@ void Point::addX(int x) { this->x += x; }
 void Point::addY(int y) { this->y += y; }
 void Point::addZ(int z) { this->z += z; }
 
-void Point::operator+=(Point p) { this->setPoint(this->x + p.x, this->y + p.y, this->z + p.y); }
-void Point::operator-=(Point p) { this->setPoint(this->x - p.x, this->y - p.y, this->z - p.y); }
-void Point::operator*=(Point p) { this->setPoint(this->x * p.x, this->y * p.y, this->z * p.y); }
-void Point::operator/=(Point p) { this->setPoint(this->x / p.x, this->y / p.y, this->z / p.y); }
-void Point::operator%=(Point p) { this->setPoint(this->x % p.x, this->y % p.y, this->z % p.y); }
+void Point::operator+=(Point p) { this->setPoint(this->x + p.x, this->y + p.y, this->z + p.z); }
+void Point::operator-=(Point p) { this->setPoint(this->x - p.x, this->y - p.y, this->z - p.z); }
+void Point::operator*=(Point p) { this->setPoint(this->x * p.x, this->y * p.y, this->z * p.z); }
+void Point::operator/=(Point p) { this->setPoint(this->x / p.x, this->y / p.y, this->z / p.z); }
+void Point::operator%=(Point p) { this->setPoint(this->x % p.x, this->y % p.y, this->z % p.z); }
 
 string Point::toString(void)
 {
