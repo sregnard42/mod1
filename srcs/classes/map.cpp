@@ -2,9 +2,6 @@
 
 Map::Map(Point max)
 {
-    this->cells = NULL;
-    max += Point();
-    /*
     this->cells = new Cell **[max.getX()]();
     for (int i = 0; i < max.getX(); i++)
     {
@@ -18,5 +15,4 @@ Map::Map(Point max)
             }
         }
     }
-    */
 }
