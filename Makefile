@@ -6,7 +6,7 @@
 #    By: chrhuang <chrhuang@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/07 14:51:18 by sregnard          #+#    #+#              #
-#    Updated: 2019/10/27 14:50:10 by sregnard         ###   ########.fr        #
+#    Updated: 2019/10/27 15:30:01 by sregnard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -63,7 +63,7 @@ OBJDIR					:=	objs/
 OBJ						:=	$(SRC:$(SRCDIR)%.cpp=$(OBJDIR)%.o)
 
 CC						:=	g++
-CFLAGS					:=	-Wall -Wextra -Werror -std=c++11
+CFLAGS					:=	-Wall -Wextra -Werror -std=c++11 -ggdb3
 LFLAGS					:= `sdl2-config --libs`
 
 _RED					:=	\033[1;31m

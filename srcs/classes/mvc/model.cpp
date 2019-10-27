@@ -6,7 +6,7 @@
 /*   By: sregnard <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/25 12:04:20 by sregnard          #+#    #+#             */
-/*   Updated: 2019/10/25 12:04:21 by sregnard         ###   ########.fr       */
+/*   Updated: 2019/10/27 15:23:08 by sregnard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,9 @@ string Model::getClassName(void)
 void Model::init(char *file)
 {
     this->points = parseFile(*this, file);
-    *(this->map) = Map(this->max);
+	cout	<< "Points\n"
+			<< Point::toString(points) << endl;
+    this->map = new Map(this->max);
 }
 
 void Model::compareMax(Point p)
